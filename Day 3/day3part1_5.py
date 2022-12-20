@@ -14,15 +14,17 @@ def strip_lines(lines):
     return stripped_lines
 
 
-with open('input.txt') as file_object:
-    lines = strip_lines(file_object.readlines())
-
+def initialize_list_of_lists(length):
     # create main list that has the length of first line
     main_list = []
     # initialize empty main list containing mini lists: [[],[],etc.]
-    for i in range(0, len(lines[0])):
+    for i in range(0, length):
         main_list.append([])
-    print(main_list)
+    return main_list
+
+with open('input.txt') as file_object:
+    lines = strip_lines(file_object.readlines())
+    main_list = initialize_list_of_lists(len(lines[0]))
 
     # filling out the main_list with mini_lists (columns)
     for line in lines:
@@ -53,3 +55,5 @@ with open('input.txt') as file_object:
     epsilon_ray = binary_to_decimal(epsilon_ray)
 
 print(gamma_ray*epsilon_ray)
+
+# input obtained - 1071734
