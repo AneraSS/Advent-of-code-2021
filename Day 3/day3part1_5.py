@@ -1,6 +1,7 @@
 # binary_number = "1101"
 # decimal_number = binary_to_decimal(binary_number)
 # print(decimal_number) # Output: 13
+
 def binary_to_decimal(binary): # from stirng
     """Converts binary to decimal."""
     return int(binary, 2)
